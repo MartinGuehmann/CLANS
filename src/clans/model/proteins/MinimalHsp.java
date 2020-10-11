@@ -19,9 +19,19 @@ public class MinimalHsp {
 	 * @param i1
 	 * @param i2
 	 */
-	public MinimalHsp(int i1, int i2) {
-		this.query = i1;
-		this.hit = i2;
+	public MinimalHsp(int seqLeft, int seqRight) {
+		// This is supposed to be symmetrical
+		// So just use a cannonical representation
+		if(seqLeft < seqRight) {
+			this.query = seqLeft;
+			this.hit   = seqRight;
+		} else {
+			this.query = seqRight;
+			this.hit   = seqLeft;
+		}
+
+	//	this.query = seqLeft;
+	//	this.hit = seqRight;
 	}
 
 	/**
